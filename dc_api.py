@@ -120,7 +120,7 @@ def comments(board_id, doc_id, sess=DEFAULT_SESS, num=-1, start_page=1):
             yield({
                 "id": li.get("no"),
                 "parent_id": li.get("m_no"),
-                "author": li[0].text + ("{}".format(li[0][0].text) if li[0][0].text else ""),
+                #"author": li[0].text + ("{}".format(li[0][0].text) if li[0][0].text else ""),
                 "author_id": li[0][1].text if len(li[0]) > 1 else None,
                 "contents": '\n'.join(i.strip() for i in li[1].itertext()),
                 "dccon": li[1][0].get("src", None) if len(li[1]) and li[1][0].tag=="img" else None,
